@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'com.sparkle'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'com.belerweb:pinyin4j:2.5.0'
+    implementation 'com.1stleg:jnativehook:2.1.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Manifest-Version': '1.0'
+        attributes 'Main-Class': 'com.sparkle.Main'
+    }
+}
